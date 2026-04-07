@@ -1694,9 +1694,6 @@ select {
     }
   }
 
-  function saveLastScreen(id) {
-    localStorage.setItem("lastScreen", id);
-  }
 
   function show(id, saveToHistory = true) {
     const normalized = normalizeScreen(id);
@@ -1713,7 +1710,6 @@ select {
 
     currentScreen = normalized;
     setHash(normalized);
-    saveLastScreen(normalized);
     window.scrollTo({ top: 0, behavior: "auto" });
     if (typeof gtag === "function") {
   gtag('event', 'page_view', {
@@ -1770,24 +1766,30 @@ select {
     show("home", false);
   }
 
-  function restoreScreenOnLoad() {
-    const hashScreen = window.location.hash
-      ? window.location.hash.replace("#", "")
-      : "";
+function restoreScreenOnLoad() {
+  const hashScreen = window.location.hash
+    ? window.location.hash.replace("#", "")
+    : "";
 
-    const savedScreen = localStorage.getItem("lastScreen");
-    const initialScreen = normalizeScreen(hashScreen || savedScreen || "home");
+  const initialScreen = normalizeScreen(hashScreen || "home");
 
-    document.querySelectorAll(".screen").forEach(screen => {
-      screen.classList.remove("active");
+  document.querySelectorAll(".screen").forEach(screen => {
+    screen.classList.remove("active");
+  });
+
+  document.getElementById(initialScreen).classList.add("active");
+
+  currentScreen = initialScreen;
+  setHash(initialScreen);
+
+  if (typeof gtag === "function") {
+    gtag('event', 'page_view', {
+      page_title: initialScreen,
+      page_location: window.location.href,
+      page_path: '/' + initialScreen
     });
-
-    document.getElementById(initialScreen).classList.add("active");
-
-    currentScreen = initialScreen;
-    setHash(initialScreen);
-    saveLastScreen(initialScreen);
   }
+}
 
   window.addEventListener("hashchange", () => {
     const hashScreen = window.location.hash.replace("#", "");
@@ -2267,17 +2269,7 @@ function beforeFormSubmit() {
   }
   return true;
 }
-document.addEventListener("DOMContentLoaded", function () {
-  const screen = location.hash.replace('#', '') || 'home';
 
-  if (typeof gtag === "function") {
-    gtag('event', 'page_view', {
-      page_title: screen,
-      page_location: window.location.href,
-      page_path: '/' + screen
-    });
-  }
-});
 
 </script>
 </body>
