@@ -1,0 +1,2256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Помощь в США — Портленд</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<meta name="theme-color" content="#edf2f4">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>
+:root {
+  --bg: #edf2f4;
+  --bg-soft: #f7f9fb;
+
+  --panel: rgba(255, 255, 255, 0.78);
+  --panel-strong: rgba(255, 255, 255, 0.9);
+
+  --text: #213b53;
+  --text-soft: #4d6982;
+  --muted: #73879a;
+
+  --line: rgba(46, 136, 196, 0.1);
+  --line-strong: rgba(46, 136, 196, 0.18);
+
+  --accent: #f58a47;
+  --accent-2: #2e88c4;
+  --accent-3: #77b9e6;
+
+  --shadow-xs: 0 3px 10px rgba(31, 63, 91, 0.04);
+  --shadow-sm: 0 6px 18px rgba(31, 63, 91, 0.05);
+  --shadow-md: 0 14px 30px rgba(31, 63, 91, 0.08);
+
+  --radius-sm: 13px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(245, 138, 71, 0.12), transparent 24%),
+    radial-gradient(circle at 80% 20%, rgba(46, 136, 196, 0.1), transparent 22%),
+    linear-gradient(180deg, #f6f8fa 0%, #edf2f4 48%, #e8eef2 100%);
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.app {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 16px 14px 24px;
+  position: relative;
+}
+
+.screen {
+  display: none;
+  min-height: calc(100vh - 42px);
+  padding-top: 58px;
+  padding-bottom: 28px;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* HOME BUTTON */
+
+.home-btn {
+  position: fixed;
+  top: 14px;
+  left: 16px;
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid rgba(46, 136, 196, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  z-index: 1000;
+  color: var(--accent-2);
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.home-btn:hover {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(46, 136, 196, 0.22);
+  transform: translateY(-1px);
+}
+
+.home-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.home-text {
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+@media (max-width: 460px) {
+  .home-btn {
+    left: 14px;
+  }
+}
+
+/* TYPE */
+
+h1, h2 {
+  font-size: 24px;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.sub {
+  color: var(--text-soft);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  max-width: 31ch;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 11px;
+  margin-bottom: 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow-xs);
+  color: var(--accent-2);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* PANELS */
+
+.hero,
+.card,
+.experience-card,
+.accordion-item {
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-md);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 15px;
+  margin-bottom: 13px;
+  border-radius: var(--radius-lg);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 18%, rgba(245, 138, 71, 0.16), transparent 22%),
+    radial-gradient(circle at 20% 100%, rgba(46, 136, 196, 0.08), transparent 24%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -42px;
+  right: -42px;
+  width: 122px;
+  height: 122px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 138, 71, 0.2), transparent 66%);
+  pointer-events: none;
+}
+
+.hero-home {
+  padding: 15px 15px 13px;
+}
+
+.hero-home h1 {
+  max-width: 10ch;
+  margin-bottom: 8px;
+}
+
+.hero-sub {
+  max-width: 28ch;
+  margin-bottom: 0;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 11px;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(46, 136, 196, 0.12);
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: var(--shadow-xs);
+  color: var(--accent-2);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* MAIN MENU */
+
+.menu {
+  margin-top: 14px;
+}
+
+.menu-panel {
+  padding: 8px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.menu-card {
+  min-height: 74px;
+  padding: 12px 12px 11px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(46, 136, 196, 0.1);
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: var(--shadow-xs);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6px;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text);
+  transition: transform 0.15s ease, background 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(46, 136, 196, 0.16);
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-card-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(46, 136, 196, 0.08);
+  font-size: 15px;
+  line-height: 1;
+}
+
+.menu-card-title {
+  font-size: 14px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.menu-card-sub {
+  font-size: 11px;
+  line-height: 1.3;
+  color: var(--text-soft);
+}
+
+.menu-section-title {
+  margin: 14px 4px 9px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.menu-list {
+  display: grid;
+  gap: 7px;
+}
+
+.menu-link {
+  width: 100%;
+  min-height: 40px;
+  padding: 0 13px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(46, 136, 196, 0.08);
+  background: rgba(255, 255, 255, 0.56);
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  color: var(--text-soft);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.16s ease, background 0.16s ease, border-color 0.16s ease;
+}
+
+.menu-link:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(46, 136, 196, 0.14);
+}
+
+.menu-link-icon {
+  width: 18px;
+  display: inline-flex;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1;
+  flex: 0 0 18px;
+}
+
+@media (max-width: 380px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-card {
+    min-height: 68px;
+  }
+}
+
+/* GENERIC BUTTONS */
+
+.menu-btn,
+.secondary-btn,
+.primary-btn,
+.link-btn,
+.back-inline,
+.ghost-link,
+.tab-btn,
+.carousel-btn {
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.menu-btn,
+.secondary-btn,
+.link-btn,
+.ghost-link,
+.tab-btn,
+.carousel-btn {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid rgba(46, 136, 196, 0.08);
+  background: rgba(255, 255, 255, 0.64);
+  color: var(--text);
+  box-shadow: var(--shadow-xs);
+}
+
+.menu-btn:hover,
+.secondary-btn:hover,
+.primary-btn:hover,
+.link-btn:hover,
+.back-inline:hover,
+.ghost-link:hover,
+.tab-btn:hover,
+.carousel-btn:hover {
+  transform: translateY(-1px);
+}
+
+.menu-btn {
+  min-height: 42px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.menu-btn:hover,
+.secondary-btn:hover,
+.tab-btn:hover,
+.carousel-btn:hover {
+  border-color: rgba(46, 136, 196, 0.18);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+/* CTA BUTTONS */
+
+.button-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.primary-btn,
+.secondary-btn,
+.back-inline,
+.ghost-link {
+  width: fit-content;
+  min-width: 0;
+  max-width: none;
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 17px;
+  border-radius: 15px;
+  border: 1px solid rgba(245, 138, 71, 0.18);
+  background: linear-gradient(135deg, #f58a47, #f29a5d);
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(245, 138, 71, 0.14);
+  max-width: 250px;
+}
+
+.primary-btn:hover {
+  box-shadow: 0 10px 20px rgba(245, 138, 71, 0.18);
+}
+
+/* калькулятор / вторичные действия */
+
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+  padding: 0 18px;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(46, 136, 196, 0.25);
+  background: linear-gradient(135deg, rgba(46,136,196,0.18), rgba(119,185,230,0.18));
+
+  color: #1f5f8f;
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow: 0 6px 16px rgba(46,136,196,0.12);
+
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.secondary-btn:hover {
+  background: linear-gradient(135deg, rgba(46,136,196,0.28), rgba(119,185,230,0.28));
+  box-shadow: 0 10px 22px rgba(46,136,196,0.18);
+  transform: translateY(-1px);
+}
+.secondary-btn:active {
+  transform: scale(0.97);
+}
+
+.back-inline {
+  display: block;
+  width: fit-content;
+  min-width: 92px;
+  height: 32px;
+  line-height: 32px;
+
+  margin: 10px auto 0;
+  padding: 0 16px;
+
+  border-radius: 999px;
+  border: 1px solid rgba(46, 136, 196, 0.05);
+  background: rgba(255, 255, 255, 0.52);
+
+  color: var(--text-soft);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+
+  box-shadow: none;
+  position: static;
+  transform: none;
+}
+
+
+.ghost-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--accent-2);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(46, 136, 196, 0.1);
+  box-shadow: none;
+}
+
+/* CARDS */
+
+.card {
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: var(--radius-md);
+  text-align: left;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 9px 0;
+  color: var(--text-soft);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.check::before {
+  content: "✓";
+  min-width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border-radius: 999px;
+  border: 1px solid rgba(46, 136, 196, 0.16);
+  background: rgba(46, 136, 196, 0.1);
+  color: var(--accent-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.highlight {
+  margin-top: 11px;
+  padding: 12px 13px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(46, 136, 196, 0.1);
+  background: linear-gradient(180deg, rgba(46, 136, 196, 0.07), rgba(255, 255, 255, 0.64));
+  color: var(--text-soft);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.warning {
+  border: 1px solid rgba(245, 138, 71, 0.16);
+  background: linear-gradient(180deg, rgba(245, 138, 71, 0.09), rgba(255, 255, 255, 0.74));
+}
+
+/* FORMS */
+
+form {
+  display: block;
+  text-align: left;
+}
+
+label,
+.input-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-soft);
+  font-size: 13px;
+}
+
+input,
+textarea,
+select,
+.input {
+  width: 100%;
+  margin-top: 5px;
+  padding: 0 44px 0 13px;
+  min-height: 48px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(46, 136, 196, 0.1);
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--text);
+  font-size: 15px;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+input,
+select,
+.input {
+  line-height: 48px;
+}
+
+textarea {
+  min-height: 100px;
+  padding: 11px 13px;
+  line-height: 1.45;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.input:focus {
+  border-color: rgba(46, 136, 196, 0.26);
+  box-shadow: 0 0 0 4px rgba(46, 136, 196, 0.07);
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23213b53' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  cursor: pointer;
+}
+
+.info-note,
+.hint {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+  text-align: left;
+}
+
+/* TABS */
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tab-btn {
+  width: 100%;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid rgba(46, 136, 196, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: none;
+  color: var(--text-soft);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tab-btn:hover {
+  transform: none;
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.tab-btn.active {
+  border: 1px solid rgba(46, 136, 196, 0.12);
+  background: linear-gradient(135deg, rgba(46, 136, 196, 0.14), rgba(119, 185, 230, 0.1));
+  box-shadow: var(--shadow-xs);
+  color: var(--accent-2);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ACCORDION */
+
+.accordion-list {
+  display: grid;
+  gap: 10px;
+}
+
+.accordion-item {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.accordion-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.accordion-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-item summary::after {
+  content: "⌄";
+  color: var(--accent-2);
+  font-size: 18px;
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+
+.accordion-item[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  padding: 0 15px 14px;
+  color: var(--text-soft);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* CAROUSEL */
+
+.carousel-wrap {
+  margin-bottom: 12px;
+}
+
+.carousel {
+  position: relative;
+}
+
+.carousel-card {
+  display: none;
+}
+
+.carousel-card.active {
+  display: block;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.carousel-btn {
+  width: auto;
+  min-width: 88px;
+  padding: 9px 11px;
+  margin-bottom: 0;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 7px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(46, 136, 196, 0.22);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.dot.active {
+  background: var(--accent-2);
+  transform: scale(1.08);
+}
+
+/* EXPERIENCE */
+
+.experience-card {
+  overflow: hidden;
+  margin-bottom: 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(46,136,196,0.08);
+  box-shadow: 0 10px 24px rgba(31,63,91,0.06);
+}
+
+
+/* картинка */
+.experience-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.experience-card:hover .experience-image {
+  filter: saturate(1) contrast(1.04);
+  transform: scale(1.01);
+}
+
+.experience-body {
+  padding: 12px 14px 14px;
+}
+
+.experience-title {
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.experience-text {
+  margin-bottom: 8px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-soft);
+}
+.experience-meta {
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-2);
+}
+
+/* === CATEGORY COLORS === */
+
+/* ДТП — красный */
+.menu-card.dtp {
+  background: rgba(255, 90, 90, 0.08);
+  border-color: rgba(255, 90, 90, 0.18);
+}
+.menu-card.dtp .menu-card-icon {
+  background: rgba(255, 90, 90, 0.14);
+}
+
+/* Работа — жёлтый */
+.menu-card.work {
+  background: rgba(255, 190, 60, 0.08);
+  border-color: rgba(255, 190, 60, 0.18);
+}
+.menu-card.work .menu-card-icon {
+  background: rgba(255, 190, 60, 0.14);
+}
+
+/* Страховки — зелёный */
+.menu-card.insurance {
+  background: rgba(60, 170, 110, 0.08);
+  border-color: rgba(60, 170, 110, 0.18);
+}
+.menu-card.insurance .menu-card-icon {
+  background: rgba(60, 170, 110, 0.14);
+}
+
+/* Налоги — серый */
+.menu-card.taxes {
+  background: rgba(120, 130, 140, 0.08);
+  border-color: rgba(120, 130, 140, 0.18);
+}
+.menu-card.taxes .menu-card-icon {
+  background: rgba(120, 130, 140, 0.14);
+}
+
+/* Бонусы — розовый */
+.menu-link.birthday {
+  background: rgba(255, 120, 160, 0.08);
+  border-color: rgba(255, 120, 160, 0.18);
+}
+
+/* Источники — оранжевый */
+.menu-link.springs {
+  background: rgba(245, 138, 71, 0.10);
+  border-color: rgba(245, 138, 71, 0.2);
+}
+
+/* Туры — голубой */
+.menu-link.services {
+  background: rgba(70, 160, 220, 0.08);
+  border-color: rgba(70, 160, 220, 0.18);
+}
+</style>
+  </head>
+  <body>
+  <button class="home-btn" onclick="goHome()" title="На главную">
+  <span class="home-icon">⌂</span>
+  <span class="home-text">На главную</span>
+</button>
+
+<div class="app">
+  <div id="home" class="screen active">
+    <div class="hero hero-home">
+      <div class="eyebrow">Портленд • США</div>
+
+      <h1>Нужная жизнь в США</h1>
+
+      <p class="sub hero-sub">
+        Работа, страховки, налоги, бонусы, маршруты и места рядом.
+      </p>
+
+      <div class="hero-pills">
+        <span class="hero-pill">ДТП</span>
+        <span class="hero-pill">Работа</span>
+        <span class="hero-pill">Страховки</span>
+        <span class="hero-pill">Налоги</span>
+      </div>
+    </div>
+
+    <div class="menu">
+  <div class="menu-panel">
+    <div class="menu-grid">
+
+      <button class="menu-card dtp" onclick="show('dtp')">
+        <span class="menu-card-icon">💥</span>
+        <span class="menu-card-title">ДТП</span>
+        <span class="menu-card-sub">Что делать сразу</span>
+      </button>
+
+      <button class="menu-card work" onclick="show('work')">
+        <span class="menu-card-icon">💼</span>
+        <span class="menu-card-title">Работа</span>
+        <span class="menu-card-sub">Как начать</span>
+      </button>
+
+      <button class="menu-card insurance" onclick="show('insurance')">
+        <span class="menu-card-icon">🛡</span>
+        <span class="menu-card-title">Страховки</span>
+        <span class="menu-card-sub">Life и medical</span>
+      </button>
+
+      <button class="menu-card taxes" onclick="show('taxes')">
+        <span class="menu-card-icon">💰</span>
+        <span class="menu-card-title">Налоги</span>
+        <span class="menu-card-sub">Калькулятор и возврат</span>
+      </button>
+
+    </div>
+  </div>
+
+  <div class="menu-section-title">Полезное</div>
+
+  <div class="menu-list">
+
+    <button class="menu-link birthday" onclick="show('birthday')">
+      <span class="menu-link-icon">🎁</span>
+      <span>Бонусы на день рождения</span>
+    </button>
+
+    <button class="menu-link springs" onclick="show('springs')">
+      <span class="menu-link-icon">♨️</span>
+      <span>Горячие источники</span>
+    </button>
+
+    <button class="menu-link services" onclick="show('services')">
+      <span class="menu-link-icon">📍</span>
+      <span>Туры по Портленду</span>
+    </button>
+      
+  </div>
+  </div>
+</div>
+
+  <div id="dtp" class="screen">
+    <div class="eyebrow">дтп</div>
+    <h2>Что произошло?</h2>
+    <p class="sub">Выберите ситуацию. Покажу, что делать дальше по шагам.</p>
+
+    <button class="menu-btn" onclick="show('dtp_now')">💥 Только что было ДТП</button>
+    <button class="menu-btn" onclick="show('dtp_insurance')">📲 Уже звонили из страховки, есть вопросы</button>
+    <button class="menu-btn" onclick="show('dtp_health')">🧑‍⚕️ Появилась боль после ДТП</button>
+    <button class="menu-btn" onclick="show('dtp_money')">💸 Кажется, заплатили мало</button>
+
+    <button class="back-inline" onclick="goBack()">Назад</button>
+  </div>
+  <div id="dtp_now" class="screen">
+    <div class="eyebrow">сразу после дтп</div>
+    <h2>Что делать сразу после ДТП</h2>
+    <p class="sub">Это влияет на деньги, выплату и вашу версию ситуации.</p>
+    <div class="card">
+      <div style="font-size:22px; margin-bottom:10px;">❗</div>
+      <div class="card-title">Чек-лист</div>
+      <div class="check">Проверьте, есть ли травмы. Нужна ли скорая</div>
+      <div class="check">Сразу сделайте фото машин и повреждений</div>
+      <div class="check">Зафиксируйте, как стоят машины</div>
+      <div class="check">Запишите контакты второго водителя</div>
+      <div class="check">Вызовите полицию, даже если переживаете из-за языка</div>
+      <div class="highlight">Первые 10 минут решают, сколько вам заплатят</div>
+    </div>
+    <div class="button-row">
+      <button class="primary-btn" onclick="showForm('ДТП — сразу после аварии', 'Коротко опишите, что произошло')">Передать мою ситуацию специалисту</button>
+    </div>
+    <button class="back-inline" onclick="goBack()">Назад</button>
+  </div>
+
+  <div id="dtp_insurance" class="screen">
+    <div class="eyebrow">страховка</div>
+    <h2>Если страховка уже звонит</h2>
+    <p class="sub">В этот момент важно не навредить себе. Разговор записывается.</p>
+    <div class="card warning">
+      <div class="card-title">Что важно</div>
+      <div class="check">Сначала уточните, звонит ваша страховка или другой стороны</div>
+      <div class="check">Не объясняйте слишком много</div>
+      <div class="check">Не обсуждайте, кто виноват</div>
+      <div class="check">Не соглашайтесь на деньги сразу</div>
+      <div class="highlight">Лучше сказать меньше, чем потом объяснять лишнее.</div>
+    </div>
+    <div class="button-row">
+      <button class="primary-btn" onclick="showForm('ДТП — звонок от страховой', 'Напишите, что вам уже сказали и что вас смущает')">Проверить мою ситуацию</button>
+    </div>
+    <button class="back-inline" onclick="goBack()">Назад</button>
+  </div>
+
+  <div id="dtp_health" class="screen">
+    <div class="eyebrow">здоровье</div>
+    <h2>Если появилась боль</h2>
+    <p class="sub">Даже если сначала все было нормально, симптомы могут появиться позже.</p>
+    <div class="card">
+      <div class="card-title">Что сделать</div>
+      <div class="check">Обратитесь в urgent care, даже если боль кажется слабой</div>
+      <div class="check">Зафиксируйте симптомы как можно раньше</div>
+      <div class="check">Не откладывайте визит к врачу</div>
+      <div class="check">После первого осмотра можно решать, что делать дальше</div>
+      <div class="highlight">Чем раньше есть запись у врача, тем проще потом связать это с ДТП.</div>
+    </div>
+    <div class="button-row">
+      <button class="primary-btn" onclick="showForm('ДТП — есть боль после аварии', 'Опишите, что болит и когда это началось')">Получить рекомендации</button>
+    </div>
+    <button class="back-inline" onclick="goBack()">Назад</button>
+  </div>
+
+  <div id="dtp_money" class="screen">
+    <div class="eyebrow">выплата</div>
+    <h2>Проверить выплату</h2>
+    <p class="sub">Часто платят меньше, чем должны.</p>
+    <div class="card">
+      <div class="card-title">Что стоит проверить</div>
+      <div class="check">Какая сумма вам предложена сейчас</div>
+      <div class="check">Как ее посчитали</div>
+      <div class="check">Учтены ли пробег, комплектация и рынок</div>
+      <div class="check">Не закрываете ли вы дело слишком рано</div>
+      <div class="highlight">Одна поспешная подпись может закрыть вам путь к нормальной компенсации.</div>
+    </div>
+    <div class="button-row">
+      <button class="primary-btn" onclick="showForm('ДТП — проверка выплаты', 'Напишите, что уже предложили и что вы хотите проверить')">Проверить выплату</button>
+    </div>
+    <button class="back-inline" onclick="goBack()">Назад</button>
+  </div>
+
+  <div id="work" class="screen">
+    <div class="eyebrow">работа</div>
+    <h2>Проверенные способы заработать</h2>
+    <p class="sub">Только варианты, где реально платят и можно начать без опыта.</p>
+    <button class="menu-btn" onclick="show('work_cable')">📺 Кабельные техники Xfinity</button>
+    <button class="menu-btn" onclick="show('work_ai')">🤖 Обучение AI</button>
+    <button class="back-inline" onclick="goBack()">Назад</button>
+  </div>
+
+  <div id="work_cable" class="screen">
+    <div class="eyebrow">кабельные техники</div>
+    <h2>Кабельные техники Xfinity</h2>
+    <p class="sub">Работа с выездами. Можно зайти без опыта, но есть требования.</p>
+    <div class="card">
+      <div style="font-size:22px; margin-bottom:10px;">📺</div>
+      <div class="card-title">Что важно знать</div>
+      <div class="check">Можно без опыта</div>
+      <div class="check">Нужен свой минивэн или трак</div>
+      <div class="check">Рабочий день до 6 pm</div>
+      <div class="check">В среднем $150–300 в день при загрузке</div>
+      <div class="check">Есть человек, который обучает и помогает зайти</div>
+      <div class="highlight">📍 Portland и окрестности</div>
+    </div>
+    <div class="button-row">
+      
+      <button class="primary-btn" onclick="showForm('Работа — кабельные техники', 'Напишите имя, номер и есть ли у вас транспорт для работы')">Откликнуться</button>
+    </div>
+    <button class="back-inline" onclick="goBack()">Назад</button>
+  </div>
+
+ <div id="work_ai" class="screen">
+  <div class="eyebrow">Обучение искусственного интеллекта</div>
+
+  <h2>AI training</h2>
+
+  <p class="sub">
+    Удаленная работа с текстами и задачами для ИИ. Есть отбор и ожидание.
+  </p>
+
+  <div class="card">
+    <div style="font-size:22px; margin-bottom:10px;">🤖</div>
+
+    <div class="card-title">Что важно знать</div>
+
+    <div class="check">Работа с текстами, проверками и заданиями для ИИ</div>
+    <div class="check">Оплата: примерно $20–100+ в час (зависит от задач)</div>
+    <div class="check">Нужен английский от B2 и резюме</div>
+    <div class="check">Сначала отбор и тесты (может занять несколько часов)</div>
+    <div class="check">Первый ответ обычно через 2–6 недель</div>
+
+    <div class="highlight">
+      Есть вакансии без образования, а есть под конкретные навыки и опыт
+    </div>
+  </div>
+
+  <div class="button-row">
+    <button class="secondary-btn" onclick="window.open('https://t.mercor.com/XaomU', '_blank')">
+      Смотреть вакансии
+    </button>
+
+    <button class="primary-btn" onclick="showForm('Работа — AI training', 'Напишите имя, номер и есть ли у вас опыт работы с текстом или данными')">
+      Задать вопрос
+    </button>
+  </div>
+
+  <p class="hint">
+    Нужна помощь? Пишите
+  </p>
+
+  <button class="back-inline" onclick="goBack()">Назад</button>
+</div>
+
+<div id="insurance" class="screen">
+  <div class="eyebrow">страховки</div>
+  <h2>Что нужно подобрать?</h2>
+  <p class="sub">Бесплатно помогу разобраться и подобрать подходящий вариант</p>
+
+  <div class="menu">
+    <button class="menu-btn" onclick="show('insurance_life')">⏳ Страхование жизни</button>
+    <button class="menu-btn" onclick="show('insurance_medical')">🌿 Подобрать медицинскую страховку</button>
+  </div>
+
+  <button class="back-inline" onclick="goBack()">Назад</button>
+</div>
+
+
+<div id="insurance_life" class="screen">
+  <div class="eyebrow">life insurance</div>
+  <h2>Как понять, какая страховка жизни вам нужна</h2>
+  <p class="sub">Коротко покажу разницу между типами и дам примерный диапазон цены.</p>
+
+  <div class="card">
+    <div style="font-size:22px; margin-bottom:10px;">🧾 Виды страхования</div>
+
+
+    <div class="accordion-list">
+  <details class="accordion-item">
+    <summary><b>Term life</b></summary>
+    <div class="accordion-content">
+      Самый простой и дешевый вариант на срок. Обычно его выбирают, когда есть дети, семья, ипотека или доход, который важно защитить.
+    </div>
+  </details>
+
+  <details class="accordion-item">
+    <summary><b>Whole / Universal life</b></summary>
+    <div class="accordion-content">
+      Более дорогие варианты. Могут включать накопление, но подходят не всем.
+    </div>
+  </details>
+
+  <details class="accordion-item">
+    <summary><b>Final expense</b></summary>
+    <div class="accordion-content">
+      Небольшой полис на похороны и базовые расходы.
+    </div>
+  </details>
+</div>
+
+    <div class="highlight">
+      Самый частый вариант для семьи — term life. Он проще, понятнее и обычно стоит дешевле.
+    </div>
+  </div>
+
+<div class="card">
+  <div style="font-size:22px; margin-bottom:10px;">🔢</div>
+  <div class="card-title">Стоимость term life</div>
+
+  <p class="sub" style="margin-bottom:16px;">
+    Это очень примерные данные. Финальная цена зависит от анкеты, мед. истории и условий конкретной компании.
+  </p>
+
+  <label class="input-label">Возраст</label>
+  <input id="lifeAge" type="number" class="input" placeholder="Например, 35" />
+
+  <label class="input-label">Пол</label>
+  <select id="lifeSex" class="input">
+    <option value="">Выберите</option>
+    <option value="female">Женщина</option>
+    <option value="male">Мужчина</option>
+  </select>
+
+  <label class="input-label">Курите?</label>
+  <select id="lifeSmoking" class="input">
+    <option value="">Выберите</option>
+    <option value="no">Нет</option>
+    <option value="yes">Да</option>
+  </select>
+
+  <label class="input-label">Здоровье</label>
+  <select id="lifeHealth" class="input">
+    <option value="">Выберите</option>
+    <option value="best">Отличное</option>
+    <option value="normal">Нормальное</option>
+    <option value="issues">Есть вопросы по здоровью</option>
+  </select>
+
+  <label class="input-label">Сумма покрытия</label>
+  <select id="lifeCoverage" class="input">
+    <option value="">Выберите</option>
+    <option value="100000">$100,000</option>
+    <option value="150000">$150,000</option>
+    <option value="250000">$250,000</option>
+    <option value="500000">$500,000</option>
+    <option value="1000000">$1,000,000</option>
+  </select>
+
+  <label class="input-label">Срок полиса</label>
+  <select id="lifeTerm" class="input">
+    <option value="">Выберите</option>
+    <option value="10">10 лет</option>
+    <option value="15">15 лет</option>
+    <option value="20">20 лет</option>
+    <option value="30">30 лет</option>
+  </select>
+
+  <div class="button-row">
+    <button class="secondary-btn" onclick="calculateLifeExample()">Показать примерный диапазон</button>
+  </div>
+
+  <div id="lifeResult" class="highlight" style="display:none;"></div>
+</div>
+
+<div class="button-row">
+  <button class="primary-btn" onclick="showForm('Life insurance — разбор', 'Напишите возраст, курите ли вы, какую сумму покрытия рассматриваете и на какой срок. Я помогу понять, что имеет смысл смотреть.')">
+    Запросить помощь
+  </button>
+</div>
+
+<button class="back-inline" onclick="goBack()">Назад</button>
+</div>
+
+<div id="insurance_medical" class="screen">
+  <div class="eyebrow">medical insurance</div>
+  <h2>Какую медицинскую страховку смотреть</h2>
+  <p class="sub">Это не заменяет официальную проверку, но помогает понять, куда смотреть.</p>
+
+  <div class="card">
+    <div class="card-title">Подбор по ситуации</div>
+
+    <label>
+      Возраст
+      <input type="number" id="medAge" placeholder="например 34">
+    </label>
+
+    <label>
+      Есть ли у вас Medicaid или другая бесплатная страховка
+      <select id="medFree">
+        <option value="no">Нет</option>
+        <option value="yes">Да</option>
+      </select>
+    </label>
+
+    <label>
+      Есть ли страховка от работодателя
+      <select id="medEmployer">
+        <option value="no">Нет</option>
+        <option value="yes">Да</option>
+      </select>
+    </label>
+
+    <label>
+      Получаете ли вы disability (SSDI)
+      <select id="medDisability">
+        <option value="no">Нет</option>
+        <option value="yes">Да</option>
+      </select>
+    </label>
+
+    <label>
+      Примерный месячный доход ($)
+      <input type="number" id="medIncome" placeholder="например 1800">
+    </label>
+
+    <div class="button-row">
+      <button class="secondary-btn" onclick="checkMedicalPath()">Показать, что подходит</button>
+    </div>
+
+    <div class="highlight" id="medResult">
+      Здесь появится ориентир.
+    </div>
+  </div>
+
+  <div class="card" id="medTipsCard" style="display:none;">
+    <div style="font-size:22px; margin-bottom:10px;">💡</div>
+    <div class="card-title" id="medTipsTitle">Что важно уточнить</div>
+
+    <div id="medTipsContent"></div>
+  </div>
+
+
+  <div class="button-row">
+    <button class="primary-btn" onclick="showForm('Medical insurance — разбор', 'Напишите штат, доход, есть ли страховка от работы и что хотите проверить')">
+      Разобрать мой случай
+    </button>
+  </div>
+
+
+
+
+  <button class="back-inline" onclick="goBack()">Назад</button>
+</div>
+
+<div id="taxes" class="screen">
+  <div class="eyebrow">налоги</div>
+  <h2>Разобраться с налогами в США</h2>
+
+  <div class="menu">
+    <button class="menu-btn" onclick="show('tax_calc')">🫰Сколько я заплачу налогов</button>
+    <button class="menu-btn" onclick="show('tax_183')">📅 Считаюсь ли я налоговым резидентом</button>
+    <button class="menu-btn" onclick="show('tax_writeoff')">🎲 Идеи для списаний</button>
+  </div>
+
+  <button class="back-inline" onclick="goBack()">Назад</button>
+</div>
+  <div id="tax_calc" class="screen">
+  <div class="eyebrow">налоги</div>
+  <h2>Сколько вы примерно заплатите налогов</h2>
+  <p class="sub">Быстрый ориентир для W2 и 1099.</p>
+
+  <div class="card">
+    <div style="font-size:22px; margin-bottom:10px;">🧾</div>
+    <div class="card-title">Введите данные</div>
+
+    <label>
+      Тип дохода
+      <select id="taxMode">
+        <option value="w2">W2</option>
+        <option value="1099">1099/самозанятый</option>
+      </select>
+    </label>
+
+    <label>
+      Налоговый статус
+      <select id="taxStatus">
+        <option value="single">Single</option>
+        <option value="mfj">Married filing jointly</option>
+        <option value="hoh">Head of household</option>
+        <option value="mfs">Married filing separately</option>
+      </select>
+    </label>
+
+    <label>
+      Штат
+      <select id="taxState">
+        <option value="or">Орегон</option>
+        <option value="wa">Вашингтон</option>
+      </select>
+    </label>
+
+    <label>
+      Годовой доход ($)
+      <input type="number" id="taxIncome" placeholder="например 45000">
+    </label>
+
+    <label>
+      Сколько детей младше 17 лет
+      <input type="number" id="taxKids" placeholder="0" min="0">
+    </label>
+
+    <div class="button-row">
+      <button class="secondary-btn" onclick="calculateUnifiedTax()">Показать расчет</button>
+    </div>
+
+    <div class="highlight" id="taxUnifiedResult">
+      Здесь будет примерный расчет.
+    </div>
+
+    <div class="button-row" style="margin-top:12px;">
+  <button class="primary-btn" onclick="showForm('Налоги — калькулятор', 'Напишите: W2 или 1099, доход, штат и ваш вопрос')">
+    Хочу уменьшить налог
+  </button>
+</div>
+  </div>
+
+
+
+  <button class="back-inline" onclick="goBack()">Назад</button>
+</div>
+  <div id="tax_183" class="screen">
+  <div class="eyebrow">налоги</div>
+  <h2>Проверка 183 дней</h2>
+  <p class="sub"><p class="sub">
+От этой формулы зависит, считаетесь ли вы налоговым резидентом США.
+</p></p>
+
+  <div class="card">
+    <div style="font-size:22px; margin-bottom:10px;">📅</div>
+    <div class="card-title">Сколько дней вы были в США</div>
+
+    <label>
+      Текущий год
+      <input type="number" id="daysCurrent" placeholder="120">
+    </label>
+
+    <label>
+      Прошлый год
+      <input type="number" id="daysPrev1" placeholder="200">
+    </label>
+
+    <label>
+      Позапрошлый год
+      <input type="number" id="daysPrev2" placeholder="180">
+    </label>
+
+    <div class="button-row">
+      <button class="secondary-btn" onclick="calcTaxResident()">Посчитать</button>
+    </div>
+
+    <div class="highlight" id="taxResult">
+      Введите данные и нажмите посчитать
+    </div>
+    <div class="button-row">
+  <button class="primary-btn" onclick="showForm('Налоги — резидент', 'Напишите ваш вопрос')">
+    Проверить мою ситуацию
+  </button>
+</div>
+  
+  </div>
+
+  <button class="back-inline" onclick="goBack()">Назад</button>
+  
+  </div>
+<div id="tax_writeoff" class="screen">
+
+
+  <div class="eyebrow">налоги</div>
+  <h2>Как уменьшить налоги</h2>
+  <p class="sub">Многие переплачивают налоги просто потому что не знают об этих списаниях</p>
+
+  <div class="card">
+    <div style="font-size:22px; margin-bottom:10px;">🎲</div>
+    <div class="card-title">Идеи списаний</div>
+
+     <div id="writeoffResult" style="margin-bottom:12px;">
+    Нажмите, чтобы увидеть идеи 👇
+  </div>
+
+    <div class="button-row">
+      <button class="secondary-btn" onclick="randomWriteoff()">Показать идеи списаний</button>
+    </div>
+  </div>
+
+  <div class="button-row">
+  <button class="primary-btn" onclick="showForm('Налоги — списание', 'Напишите ваш вопрос')">
+    Проверить мою ситуацию
+  </button>
+</div>
+
+  <button class="back-inline" onclick="goBack()">Назад</button>
+</div>
+
+  <div id="birthday" class="screen">
+  <div class="eyebrow">подарки</div>
+  <h2>Бонусы на день рождения</h2>
+  <p class="sub">Что можно забрать бесплатно</p>
+
+  <div class="card">
+    <div style="font-size:22px; margin-bottom:10px;">🎂</div>
+    <div class="card-title">Где дают бонусы</div>
+
+    <div class="check">
+      <b>Starbucks</b> бесплатный напиток или еда
+    </div>
+
+    <div class="check">
+      <b>Sephora</b> подарок и бонусы в приложении
+    </div>
+
+    <div class="check">
+      <b>Nothing Bundt Cakes</b> бесплатный мини-торт
+    </div>
+
+    <div class="highlight">
+      Чаще всего про это узнают слишком поздно
+    </div>
+  </div>
+
+    <div class="mini-links" style="margin: 16px 0 24px;">
+    <a class="ghost-link" href="https://linkly.link/2f37k" target="_blank">
+       Открыть все бонусы
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Важно</div>
+
+    <div class="check">Часто нужно зарегистрироваться заранее</div>
+    <div class="check">Некоторые бонусы приходят только в приложение</div>
+    <div class="check">Есть срок использования</div>
+
+    <div class="highlight">
+      Если зарегистрироваться в день рождения бонуса может не быть
+    </div>
+  </div>
+
+
+
+  <button class="back-inline" onclick="goBack()">Назад</button>
+</div>
+
+<div id="springs" class="screen">
+  <div class="eyebrow">отдых</div>
+  <h2>Горячие источники</h2>
+  
+  <div class="card">
+    <div style="font-size:22px; margin-bottom:10px;">🏞️ Быстрый обзор на карте ниже</div>
+  
+
+    <div class="highlight">
+      Часть источников требует короткий хайк. Проверяйте доступ перед поездкой.
+    </div>
+  </div>
+
+<div class="card" style="padding:10px;">
+  <iframe 
+    src="https://www.google.com/maps/d/embed?mid=1n4GhCABk-Rh_VQG6BPU7DYOLWWk&ehbc=2E312F"
+    width="100%" 
+    height="260"
+    style="border:0; border-radius:14px;" 
+    loading="lazy">
+  </iframe>
+</div>
+
+
+  <div class="mini-links" style="margin: 12px 0 24px;">
+    <a class="ghost-link" href="https://maps.app.goo.gl/oUvpo84bs48XK59y7" target="_blank">
+      Открыть карту с видео и описанием
+    </a>
+  </div>
+
+  <button class="back-inline" onclick="goBack()">Назад</button>
+</div>
+
+<div id="services" class="screen">
+  <div class="eyebrow">лайфстайл</div>
+  <h2>Туры по Портленду</h2>
+  <p class="sub">Когда не хочется искать и планировать.</p>
+
+  <div class="experience-grid">
+
+    <div class="experience-card">
+      <img src="cruise_downtown.jpg" alt="Круиз по даунтауну" class="experience-image">
+      <div class="experience-body">
+        <div class="experience-title">Круиз по даунтауну</div>
+        <div class="experience-text">Прогулка по воде с видом на центр Портленда</div>
+        <div class="experience-meta">от $89</div>
+        <a class="primary-btn" href="https://getyourguide.tpo.li/AEJvK3RC?erid=2VtzqvpiUjQ" target="_blank">
+      Смотреть
+        </a>
+      </div>
+    </div>
+
+    <div class="experience-card">
+      <img src="multnomah_falls.jpg" alt="Тур к Multnomah Falls" class="experience-image">
+      <div class="experience-body">
+        <div class="experience-title">Полет к Multnomah Falls</div>
+        <div class="experience-text">Короткий полет к одному из самых известных водопадов Орегона</div>
+        <div class="experience-meta">от $199</div>
+        <a class="primary-btn" href="https://getyourguide.tpo.li/AEJvK3RC?erid=2VtzqvpiUjQ" target="_blank">
+      Смотреть
+        </a>
+      </div>
+    </div>
+
+    <div class="experience-card">
+      <img src="mt_hood.png" alt="Тур к Mount Hood" class="experience-image">
+      <div class="experience-body">
+        <div class="experience-title">Полет к Mount Hood</div>
+        <div class="experience-text">Mount Hood с воздуха. То, что обычно видят только пилоты</div>
+        <div class="experience-meta">от $299</div>
+        <a class="primary-btn" href="https://getyourguide.tpo.li/13rmASXF?erid=2VtzqvpiUjQ" target="_blank">
+      Смотреть
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="back-inline" onclick="goBack()">Назад</button>
+</div>
+
+  <div id="form" class="screen">
+    <div class="eyebrow">помощь</div>
+    <h2 id="formTitle">Напишите мне</h2>
+    <p class="sub" id="formSub">Пожалуйста, заполните и отправьте форму для получения обратной связи.</p>
+    <div class="card">
+      <form action="https://formspree.io/f/mpqolvja" method="POST" onsubmit="return beforeFormSubmit()">
+  <input type="hidden" name="page_name" id="page_name" value="">
+        <label>
+          Имя
+          <input type="text" name="name" placeholder="Как к вам обращаться" required />
+        </label>
+        <label>
+          Контакт
+          <input type="text" name="contact" placeholder="Телефон или Telegram" required />
+        </label>
+        <label>
+          Комментарий
+          <textarea name="message" id="messageField" placeholder="Опишите ситуацию"></textarea>
+        </label>
+        <button class="primary-btn" type="submit">Связаться</button>
+      </form>
+      <div class="info-note">Постараюсь помочь как можно быстрее</div>
+    </div>
+    <button class="back-inline" onclick="goBack()">Назад</button>
+  </div>
+</div>
+
+<script>
+  let currentScreen = "home";
+  let screenHistory = [];
+  let lastSourceScreen = "";
+
+  function normalizeScreen(id) {
+    return document.getElementById(id) ? id : "home";
+  }
+
+  function setHash(id) {
+    const normalized = normalizeScreen(id);
+    if (window.location.hash !== "#" + normalized) {
+      history.replaceState(null, "", "#" + normalized);
+    }
+  }
+
+  function saveLastScreen(id) {
+    localStorage.setItem("lastScreen", id);
+  }
+
+  function show(id, saveToHistory = true) {
+    const normalized = normalizeScreen(id);
+
+    if (saveToHistory && currentScreen !== normalized) {
+      screenHistory.push(currentScreen);
+    }
+
+    document.querySelectorAll(".screen").forEach(screen => {
+      screen.classList.remove("active");
+    });
+
+    document.getElementById(normalized).classList.add("active");
+
+    currentScreen = normalized;
+    setHash(normalized);
+    saveLastScreen(normalized);
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }
+
+  function goHome() {
+    screenHistory = [];
+    lastSourceScreen = "";
+    show("home", false);
+  }
+
+  function showForm(sourceName, placeholderText) {
+    const pageField = document.getElementById("page_name");
+    if (pageField) pageField.value = sourceName;
+
+    const messageField = document.getElementById("messageField");
+    if (messageField) {
+      messageField.placeholder = placeholderText || "Опишите ситуацию";
+    }
+
+    const formTitle = document.getElementById("formTitle");
+    if (formTitle) {
+      formTitle.textContent = "Напишите мне";
+    }
+
+    const formSub = document.getElementById("formSub");
+    if (formSub) {
+      formSub.textContent = "Ответ придет в тот контакт, который вы оставите.";
+    }
+
+    lastSourceScreen = currentScreen;
+    show("form");
+  }
+
+  function goBack() {
+    if (currentScreen === "form" && lastSourceScreen) {
+      const target = lastSourceScreen;
+      lastSourceScreen = "";
+      show(target, false);
+      return;
+    }
+
+    if (screenHistory.length > 0) {
+      const prev = screenHistory.pop();
+      show(prev, false);
+      return;
+    }
+
+    show("home", false);
+  }
+
+  function restoreScreenOnLoad() {
+    const hashScreen = window.location.hash
+      ? window.location.hash.replace("#", "")
+      : "";
+
+    const savedScreen = localStorage.getItem("lastScreen");
+    const initialScreen = normalizeScreen(hashScreen || savedScreen || "home");
+
+    document.querySelectorAll(".screen").forEach(screen => {
+      screen.classList.remove("active");
+    });
+
+    document.getElementById(initialScreen).classList.add("active");
+
+    currentScreen = initialScreen;
+    setHash(initialScreen);
+    saveLastScreen(initialScreen);
+  }
+
+  window.addEventListener("hashchange", () => {
+    const hashScreen = window.location.hash.replace("#", "");
+    if (
+      hashScreen &&
+      hashScreen !== currentScreen &&
+      document.getElementById(hashScreen)
+    ) {
+      show(hashScreen, false);
+    }
+  });
+
+  restoreScreenOnLoad();
+  const writeoffs = [
+  "Подписки софта",
+  "CRM системы",
+  "Домен сайта",
+  "Хостинг",
+  "Дизайн услуги",
+  "Монтаж видео",
+  "Фриланс услуги",
+  "Консультации",
+  "Бухгалтер",
+  "Юридическая помощь",
+  "Реклама Facebook",
+  "Реклама Google",
+  "Продвижение Instagram",
+  "TikTok реклама",
+  "Печать материалов",
+  "Визитки",
+  "Брендинг",
+  "Фото услуги",
+  "Контент съемка",
+  "Продакшн",
+  "Zoom подписка",
+  "Slack платный",
+  "Notion платный",
+  "Canva Pro",
+  "Figma тариф",
+  "Dropbox",
+  "Google Workspace",
+  "VPN сервисы",
+  "Антивирус",
+  "Облачные сервисы",
+  "Коворкинг",
+  "Аренда студии",
+  "Офисная аренда",
+  "Рабочая мебель",
+  "Освещение",
+  "Фон для съемки",
+  "Реквизит",
+  "Декор для съемок",
+  "Стеллажи",
+  "Органайзеры",
+  "Камера",
+  "Объектив",
+  "Микрофон",
+  "Штатив",
+  "Наушники",
+  "Монитор",
+  "Клавиатура",
+  "Планшет",
+  "Графический планшет",
+  "Плагины",
+  "Шаблоны сайтов",
+  "Шрифты",
+  "Сток фото",
+  "Сток видео",
+  "Музыка лицензии",
+  "AI сервисы",
+  "Чат-боты",
+  "Автоматизация",
+  "Интеграции",
+  "Онлайн курсы",
+  "Мастермайнды",
+  "Нетворкинг события",
+  "Конференции",
+  "Бизнес клубы",
+  "Платные чаты",
+  "Подписки экспертов",
+  "Аналитические сервисы",
+  "Исследования рынка",
+  "Аудит бизнеса"
+];
+
+function randomWriteoff() {
+  const shuffled = [...writeoffs].sort(() => 0.5 - Math.random());
+  const selected = shuffled.slice(0, 3);
+  const box = document.getElementById("writeoffResult");
+  if (!box) return;
+  box.innerHTML = selected.join("<br>");
+}
+
+  let medicalSlide = 0;
+
+function updateMedicalCarousel() {
+  const cards = document.querySelectorAll("#medicalCarousel .carousel-card");
+  const dots = document.querySelectorAll(".carousel-dots .dot");
+
+  cards.forEach((card, index) => {
+    card.classList.toggle("active", index === medicalSlide);
+  });
+
+  dots.forEach((dot, index) => {
+    dot.classList.toggle("active", index === medicalSlide);
+  });
+}
+
+function moveMedicalSlide(direction) {
+  const cards = document.querySelectorAll("#medicalCarousel .carousel-card");
+  medicalSlide += direction;
+
+  if (medicalSlide < 0) medicalSlide = cards.length - 1;
+  if (medicalSlide >= cards.length) medicalSlide = 0;
+
+  updateMedicalCarousel();
+}
+
+function goMedicalSlide(index) {
+  medicalSlide = index;
+  updateMedicalCarousel();
+}
+
+function checkMedicalPath() {
+  const age = Number(document.getElementById("medAge").value) || 0;
+  const hasFree = document.getElementById("medFree").value;
+  const hasEmployer = document.getElementById("medEmployer").value;
+  const disability = document.getElementById("medDisability").value;
+  const income = Number(document.getElementById("medIncome").value) || 0;
+
+  const resultBox = document.getElementById("medResult");
+  const tipsCard = document.getElementById("medTipsCard");
+  const tipsTitle = document.getElementById("medTipsTitle");
+  const tipsContent = document.getElementById("medTipsContent");
+  const formWrap = document.getElementById("medFormWrap");
+
+  if (formWrap) formWrap.style.display = "none";
+
+  if (!age) {
+    resultBox.innerHTML = "Введите возраст.";
+    tipsCard.style.display = "none";
+    if (formWrap) formWrap.style.display = "none";
+    return;
+  }
+
+  let resultText = "";
+  let title = "";
+  let tips = "";
+
+  if (hasFree === "yes") {
+    resultText = "Похоже, у вас уже есть бесплатная или государственная страховка. Сначала стоит проверить, что именно она покрывает и нужно ли что-то докупать отдельно.";
+    title = "Если страховка уже есть";
+    tips = `
+      <div class="check">Medical, dental или vision часто могут идти отдельно</div>
+      <div class="check">Проверьте, какие врачи и клиники входят в сеть</div>
+      <div class="check">Посмотрите, есть ли copay, deductible и ограничения по процедурам</div>
+      <div class="check">Если страховка государственная, важно понять, какая это программа и что именно в нее входит</div>
+      <div class="highlight">Пока у вас есть бесплатная страховка, переход на Marketplace может быть невыгодным. Вы не получите скидку и будете платить полную цену.</div>
+    `;
+  } else if (hasEmployer === "yes") {
+    resultText = "Скорее всего, вам сначала стоит смотреть страховку от работы.";
+    title = "Если есть страховка от работодателя";
+    tips = `
+      <div class="check">Сначала сравните цену, deductible и copay</div>
+      <div class="check">Иногда работодатель покрывает только часть стоимости</div>
+      <div class="check">Важно проверить, насколько дорогой family plan</div>
+      <div class="highlight">Даже если страховка от работы есть, она не всегда выгоднее Marketplace.</div>
+    `;
+  } else if (disability === "yes") {
+    resultText = "Возможно, вам стоит проверить право на Medicare или другие специальные программы.";
+    title = "Если получаете disability";
+    tips = `
+      <div class="check">При SSDI иногда появляется право на Medicare</div>
+      <div class="check">Важно понять, когда именно начинается покрытие</div>
+      <div class="check">Иногда можно комбинировать несколько вариантов</div>
+      <div class="highlight">Тут особенно важно смотреть детали по программе и штату.</div>
+    `;
+  } else if (income > 0 && income <= 1800) {
+    resultText = "Скорее всего, вам стоит начать с Medicaid и проверить, проходите ли вы по доходу.";
+    title = "Что важно знать про Medicaid";
+    tips = `
+      <div class="check">Medicaid чаще всего подключают при низком доходе</div>
+      <div class="check">Правила зависят от штата</div>
+      <div class="check">Важно смотреть не только ваш доход, но и состав семьи</div>
+      <div class="check">Иногда люди идут в Marketplace, хотя сначала им стоило проверить Medicaid</div>
+      <div class="highlight">Пока вы на Medicaid, Marketplace-страховки обычно становятся дороже, потому что вы не получаете субсидию.</div>
+    `;
+  } else {
+    resultText = "Скорее всего, вам стоит начать с Marketplace и проверить, есть ли у вас субсидия.";
+    title = "Что важно знать про Marketplace";
+    tips = `
+      <div class="check">Это платформа, где сравнивают планы и проверяют, есть ли у вас скидка</div>
+      <div class="check">Смотрите не только на цену в месяц, но и на deductible, copay и лимит расходов за год</div>
+      <div class="check">Важно понимать, можно ли вам оформить план сейчас или нужно ждать открытого периода</div>
+      <div class="check">Dental и vision часто идут отдельно и не входят в основной план</div>
+      <div class="highlight">Open Enrollment обычно с 1 ноября по 15 января. Вне этого периода оформить план можно только при особых обстоятельствах.</div>
+    `;
+  }
+
+  resultBox.innerHTML = resultText;
+  tipsTitle.textContent = title;
+  tipsContent.innerHTML = tips;
+  tipsCard.style.display = "block";
+  if (formWrap) formWrap.style.display = "grid";
+}
+
+function calculateLifeExample() {
+  const age = parseInt(document.getElementById("lifeAge").value, 10);
+  const sex = document.getElementById("lifeSex").value;
+  const smoking = document.getElementById("lifeSmoking").value;
+  const health = document.getElementById("lifeHealth").value;
+  const coverage = parseInt(document.getElementById("lifeCoverage").value, 10);
+  const term = parseInt(document.getElementById("lifeTerm").value, 10);
+  const result = document.getElementById("lifeResult");
+
+  if (!age || !sex || !smoking || !health || !coverage || !term) {
+    result.style.display = "block";
+    result.innerText = "Заполните все поля.";
+    return;
+  }
+
+  let base = 0;
+
+  if (age <= 25) base = 15;
+  else if (age <= 30) base = 18;
+  else if (age <= 35) base = 22;
+  else if (age <= 40) base = 30;
+  else if (age <= 45) base = 40;
+  else if (age <= 50) base = 55;
+  else if (age <= 55) base = 75;
+  else if (age <= 60) base = 110;
+  else base = 160;
+
+  if (sex === "male") base *= 1.15;
+  if (smoking === "yes") base *= 2.5;
+  if (health === "normal") base *= 1.2;
+  if (health === "issues") base *= 1.6;
+
+  base *= coverage / 250000;
+
+  if (term === 10) base *= 0.8;
+  if (term === 15) base *= 1.0;
+  if (term === 20) base *= 1.25;
+  if (term === 30) base *= 1.8;
+
+  const min = Math.round(base * 0.8);
+  const max = Math.round(base * 1.3);
+
+  result.style.display = "block";
+  result.innerText = `Примерный диапазон: $${min}–$${max}/мес. Это ориентир, а не точная цена.`;
+}
+function calcTaxResident() {
+  const current = Number(document.getElementById("daysCurrent").value) || 0;
+  const prev1 = Number(document.getElementById("daysPrev1").value) || 0;
+  const prev2 = Number(document.getElementById("daysPrev2").value) || 0;
+
+  const total = current + (prev1 / 3) + (prev2 / 6);
+  const rounded = total.toFixed(1);
+
+  if (total >= 183) {
+    document.getElementById("taxResult").innerHTML =
+      "По формуле получается <strong>" + rounded + "</strong> дней. Это сильный сигнал, что вас могут считать налоговым резидентом США.";
+  } else {
+    document.getElementById("taxResult").innerHTML =
+      "По формуле получается <strong>" + rounded + "</strong> дней. Порог 183 дня пока не достигнут.";
+  }
+}
+
+const FEDERAL_2025 = {
+  single: {
+    stdDeduction: 15750,
+    brackets: [
+      [11925, 0.10],
+      [48475, 0.12],
+      [103350, 0.22],
+      [197300, 0.24],
+      [250525, 0.32],
+      [626350, 0.35],
+      [Infinity, 0.37]
+    ],
+    ctcPhaseout: 200000
+  },
+  mfs: {
+    stdDeduction: 15750,
+    brackets: [
+      [11925, 0.10],
+      [48475, 0.12],
+      [103350, 0.22],
+      [197300, 0.24],
+      [250525, 0.32],
+      [375800, 0.35],
+      [Infinity, 0.37]
+    ],
+    ctcPhaseout: 200000
+  },
+  hoh: {
+    stdDeduction: 23625,
+    brackets: [
+      [17000, 0.10],
+      [64850, 0.12],
+      [103350, 0.22],
+      [197300, 0.24],
+      [250500, 0.32],
+      [626350, 0.35],
+      [Infinity, 0.37]
+    ],
+    ctcPhaseout: 200000
+  },
+  mfj: {
+    stdDeduction: 31500,
+    brackets: [
+      [23850, 0.10],
+      [96950, 0.12],
+      [206700, 0.22],
+      [394600, 0.24],
+      [501050, 0.32],
+      [751600, 0.35],
+      [Infinity, 0.37]
+    ],
+    ctcPhaseout: 400000
+  }
+};
+
+function calcBracketTax(taxableIncome, brackets) {
+  if (taxableIncome <= 0) return 0;
+
+  let tax = 0;
+  let prev = 0;
+
+  for (let i = 0; i < brackets.length; i++) {
+    const upper = brackets[i][0];
+    const rate = brackets[i][1];
+
+    if (taxableIncome > upper) {
+      tax += (upper - prev) * rate;
+      prev = upper;
+    } else {
+      tax += (taxableIncome - prev) * rate;
+      break;
+    }
+  }
+
+  return tax;
+}
+
+function getChildTaxCredit(kids, status, income) {
+  kids = Number(kids) || 0;
+  if (kids <= 0) return 0;
+
+  let maxCredit = kids * 2200;
+  const phaseoutStart = FEDERAL_2025[status].ctcPhaseout;
+
+  if (income <= phaseoutStart) return maxCredit;
+
+  const excess = income - phaseoutStart;
+  const reduction = Math.ceil(excess / 1000) * 50;
+  return Math.max(0, maxCredit - reduction);
+}
+
+function calcOregonTax(taxableIncome, status) {
+  if (taxableIncome <= 0) return 0;
+
+  const group = (status === "mfj" || status === "hoh") ? "joint" : "single";
+
+  if (group === "single") {
+    if (taxableIncome <= 4400) return taxableIncome * 0.0475;
+    if (taxableIncome <= 11050) return 209 + (taxableIncome - 4400) * 0.0675;
+    if (taxableIncome <= 125000) return 658 + (taxableIncome - 11050) * 0.0875;
+    return 10629 + (taxableIncome - 125000) * 0.099;
+  } else {
+    if (taxableIncome <= 8800) return taxableIncome * 0.0475;
+    if (taxableIncome <= 22100) return 418 + (taxableIncome - 8800) * 0.0675;
+    if (taxableIncome <= 250000) return 1316 + (taxableIncome - 22100) * 0.0875;
+    return 21257 + (taxableIncome - 250000) * 0.099;
+  }
+}
+
+function getOregonStdDeduction(status) {
+  if (status === "mfj") return 5600;
+  if (status === "hoh") return 4500;
+  return 2800;
+}
+
+function formatMoney(n) {
+  return "$" + Math.round(n).toLocaleString("en-US");
+}
+
+function calculateUnifiedTax() {
+  const mode = document.getElementById("taxMode").value;
+  const status = document.getElementById("taxStatus").value;
+  const state = document.getElementById("taxState").value;
+  const income = Number(document.getElementById("taxIncome").value) || 0;
+  const kids = Number(document.getElementById("taxKids").value) || 0;
+
+  if (income <= 0) {
+    document.getElementById("taxUnifiedResult").innerHTML = "Введите доход.";
+    return;
+  }
+
+  if (mode === "w2") {
+    const federalTaxable = Math.max(0, income - FEDERAL_2025[status].stdDeduction);
+    let federalTax = calcBracketTax(federalTaxable, FEDERAL_2025[status].brackets);
+
+    const ctc = getChildTaxCredit(kids, status, income);
+    federalTax = Math.max(0, federalTax - ctc);
+
+    let stateTax = 0;
+    if (state === "or") {
+      const orTaxable = Math.max(0, income - getOregonStdDeduction(status));
+      stateTax = calcOregonTax(orTaxable, status);
+    }
+
+    const totalTax = federalTax + stateTax;
+
+    let html = "";
+    html += "<strong>Примерный налог " + formatMoney(totalTax) + "</strong><br>";
+    html += "Это около " + Math.round((totalTax / income) * 100) + "% от дохода<br><br>";
+    html += "Federal " + formatMoney(federalTax) + "<br>";
+    html += "State " + formatMoney(stateTax);
+
+    if (kids > 0) {
+      html += "<br><br>Учтен ориентировочный Child Tax Credit до " + formatMoney(ctc) + ".";
+    }
+
+    html += "<br><br>Это базовый расчет без возвратных кредитов.";
+    html += "<br>Если у вас есть дети или несколько источников дохода, итог может отличаться заметно.";
+
+    document.getElementById("taxUnifiedResult").innerHTML = html;
+    return;
+  }
+
+  if (mode === "1099") {
+    const net = income;
+    const seBase = net * 0.9235;
+    const seTax = seBase * 0.153;
+    const deductibleHalfSETax = seTax / 2;
+
+    const federalTaxable = Math.max(0, net - deductibleHalfSETax - FEDERAL_2025[status].stdDeduction);
+    let federalTax = calcBracketTax(federalTaxable, FEDERAL_2025[status].brackets);
+
+    const ctc = getChildTaxCredit(kids, status, net);
+    federalTax = Math.max(0, federalTax - ctc);
+
+    let stateTax = 0;
+    if (state === "or") {
+      const orTaxable = Math.max(0, net - getOregonStdDeduction(status));
+      stateTax = calcOregonTax(orTaxable, status);
+    }
+
+    const totalTax = federalTax + stateTax + seTax;
+
+    let html = "";
+    html += "<strong>Примерный налог " + formatMoney(totalTax) + "</strong><br>";
+    html += "Это около " + Math.round((totalTax / income) * 100) + "% от дохода<br><br>";
+    html += "Federal " + formatMoney(federalTax) + "<br>";
+    html += "State " + formatMoney(stateTax) + "<br>";
+    html += "Self employment tax " + formatMoney(seTax);
+
+    if (kids > 0) {
+      html += "<br><br>Учтен ориентировочный Child Tax Credit до " + formatMoney(ctc) + ".";
+    }
+
+    html += "<br><br>Это расчет без списаний, поэтому в реальности налог может быть ниже.";
+    html += "<br>Если вы self employed, обычно есть смысл думать про estimated tax payments в течение года.";
+    html += "<br>Если у вас есть дети или несколько источников дохода, итог может отличаться заметно.";
+
+    document.getElementById("taxUnifiedResult").innerHTML = html;
+  }
+}
+function beforeFormSubmit() {
+  if (typeof gtag === "function") {
+    const pageName = document.getElementById("page_name")?.value || "unknown";
+    gtag('event', 'generate_lead', {
+      form_name: 'contact_form',
+      source_screen: pageName
+    });
+  }
+  return true;
+}
+
+</script>
+</body>
+</html>
