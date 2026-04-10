@@ -943,6 +943,35 @@ select {
   background: rgba(70, 160, 220, 0.08);
   border-color: rgba(70, 160, 220, 0.18);
 }
+.tg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-bottom: 10px;
+  padding: 6px 10px;
+
+  border-radius: 999px;
+  background: rgba(46, 136, 196, 0.08);
+  border: 1px solid rgba(46, 136, 196, 0.18);
+
+  text-decoration: none;
+  color: var(--accent-2);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.tg-badge:hover {
+  background: rgba(46, 136, 196, 0.16);
+  transform: translateY(-1px);
+}
+
+.tg-icon {
+  font-size: 13px;
+}
 </style>
   </head>
   <body>
@@ -954,6 +983,10 @@ select {
 <div class="app">
   <div id="home" class="screen active">
     <div class="hero hero-home">
+      <a href="https://t.me/portland_PDX" target="_blank" class="tg-badge">
+  <span class="tg-icon">✈️</span>
+  <span class="tg-text">Подпишись на Portland Events</span>
+</a>
       <div class="eyebrow">Портленд • США</div>
 
       <h1>Упрощаю жизнь в США</h1>
@@ -2274,4 +2307,3 @@ function beforeFormSubmit() {
 </script>
 </body>
 </html>
-
