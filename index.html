@@ -264,6 +264,113 @@ h1, h2 {
 }
 
 /* MAIN MENU */
+.ticket-tab-content {
+  display: none;
+}
+
+.ticket-tab-content.active {
+  display: block;
+}
+
+.carousel-shell {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.carousel-shell::before,
+.carousel-shell::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 34px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.carousel-shell::before {
+  left: 0;
+  background: linear-gradient(to right, #edf2f4, transparent);
+}
+
+.carousel-shell::after {
+  right: 0;
+  background: linear-gradient(to left, #edf2f4, transparent);
+}
+
+.carousel-row {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 4px 44px 10px 44px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  opacity: 0.9;
+  
+}
+
+.experience-title {
+  padding-right: 30px;
+}
+
+.carousel-row::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-row .experience-card {
+  flex: 0 0 80%;
+  min-width: 80%;
+  scroll-snap-align: start;
+  margin-bottom: 0;
+}
+
+.carousel-row .experience-image {
+  height: 140px;
+}
+
+.carousel-row .primary-btn {
+  min-height: 36px;
+  padding: 0 15px;
+  font-size: 12px;
+  border-radius: 13px;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #f58a47, #f29a5d);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(245, 138, 71, 0.3);
+  cursor: pointer;
+}
+
+.carousel-arrow.left {
+  left: 6px;
+}
+
+.carousel-arrow.right {
+  right: 6px;
+}
+
+.carousel-arrow.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 
 .menu {
   margin-top: 14px;
@@ -1050,7 +1157,7 @@ select {
 
     <button class="menu-link services" onclick="show('services')">
       <span class="menu-link-icon">📍</span>
-      <span>Туры по Портленду</span>
+      <span>Куда пойти в Портленде</span>
     </button>
       
   </div>
@@ -1637,7 +1744,18 @@ select {
 </div>
 
 <div id="services" class="screen">
-  <div class="eyebrow">лайфстайл</div>
+  <div class="eyebrow">Развлечения</div>
+  <h2>Куда пойти в Портленде</h2>
+  <p class="sub">Выберите раздел</p>
+
+  <button class="menu-btn" onclick="show('services_tours')">🚁 Туры по Портленду</button>
+  <button class="menu-btn" onclick="show('services_tickets')">🎫 Билеты заранее</button>
+
+  <button class="back-inline" onclick="goBack()">Назад</button>
+</div>
+
+  <div id="services_tours" class="screen">
+  <div class="eyebrow">туры</div>
   <h2>Туры по Портленду</h2>
   <p class="sub">Когда не хочется искать и планировать.</p>
 
@@ -1649,33 +1767,27 @@ select {
         <div class="experience-title">Круиз по даунтауну</div>
         <div class="experience-text">Прогулка по воде с видом на центр Портленда</div>
         <div class="experience-meta">от $89</div>
-        <a class="primary-btn" href="https://getyourguide.tpo.li/AEJvK3RC?erid=2VtzqvpiUjQ" target="_blank">
-      Смотреть
-        </a>
+        <a class="primary-btn" href="https://getyourguide.tpo.li/AEJvK3RC?erid=2VtzqvpiUjQ" target="_blank">Смотреть</a>
       </div>
     </div>
 
     <div class="experience-card">
-      <img src="multnomah_falls.jpg" alt="Тур к Multnomah Falls" class="experience-image">
+      <img src="multnomah_falls.jpg" alt="Полет к Multnomah Falls" class="experience-image">
       <div class="experience-body">
         <div class="experience-title">Полет к Multnomah Falls</div>
         <div class="experience-text">Короткий полет к одному из самых известных водопадов Орегона</div>
         <div class="experience-meta">от $199</div>
-        <a class="primary-btn" href="https://getyourguide.tpo.li/AEJvK3RC?erid=2VtzqvpiUjQ" target="_blank">
-      Смотреть
-        </a>
+        <a class="primary-btn" href="https://getyourguide.tpo.li/AEJvK3RC?erid=2VtzqvpiUjQ" target="_blank">Смотреть</a>
       </div>
     </div>
 
     <div class="experience-card">
-      <img src="mt_hood.png" alt="Тур к Mount Hood" class="experience-image">
+      <img src="mt_hood.png" alt="Полет к Mount Hood" class="experience-image">
       <div class="experience-body">
         <div class="experience-title">Полет к Mount Hood</div>
         <div class="experience-text">Mount Hood с воздуха. То, что обычно видят только пилоты</div>
         <div class="experience-meta">от $299</div>
-        <a class="primary-btn" href="https://getyourguide.tpo.li/13rmASXF?erid=2VtzqvpiUjQ" target="_blank">
-      Смотреть
-        </a>
+        <a class="primary-btn" href="https://getyourguide.tpo.li/AEJvK3RC?erid=2VtzqvpiUjQ" target="_blank">Смотреть</a>
       </div>
     </div>
 
@@ -1684,31 +1796,144 @@ select {
   <button class="back-inline" onclick="goBack()">Назад</button>
 </div>
 
-  <div id="form" class="screen">
-    <div class="eyebrow">помощь</div>
-    <h2 id="formTitle">Напишите мне</h2>
-    <p class="sub" id="formSub">Пожалуйста, заполните и отправьте форму для получения обратной связи.</p>
-    <div class="card">
-      <form action="https://formspree.io/f/mpqolvja" method="POST" onsubmit="return beforeFormSubmit()">
-  <input type="hidden" name="page_name" id="page_name" value="">
-        <label>
-          Имя
-          <input type="text" name="name" placeholder="Как к вам обращаться" required />
-        </label>
-        <label>
-          Контакт
-          <input type="text" name="contact" placeholder="Телефон или Telegram" required />
-        </label>
-        <label>
-          Комментарий
-          <textarea name="message" id="messageField" placeholder="Опишите ситуацию"></textarea>
-        </label>
-        <button class="primary-btn" type="submit">Связаться</button>
-      </form>
-      <div class="info-note">Постараюсь помочь как можно быстрее</div>
-    </div>
-    <button class="back-inline" onclick="goBack()">Назад</button>
+<div id="services_tickets" class="screen">
+  <div class="eyebrow">билеты</div>
+  <h2>Билеты на будущее</h2>
+  <p class="sub">Лучшие концерты, на которые имеет смысл брать билеты заранее.</p>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTicketTab('near', this)">Ближайшие 3 месяца</button>
+    <button class="tab-btn" onclick="showTicketTab('later', this)">Позже</button>
   </div>
+
+  <h3 class="menu-section-title">Топ концерты</h3>
+
+  <div class="carousel-shell">
+    <button class="carousel-arrow left" id="topConcertsPrev" onclick="scrollTopConcerts(-1)">‹</button>
+    <button class="carousel-arrow right" id="topConcertsNext" onclick="scrollTopConcerts(1)">›</button>
+
+    <div class="carousel-row" id="topConcertsRow" onscroll="updateTopConcertArrows()">
+
+      <div class="experience-card">
+        <img src="doja_cat.jpg" alt="Doja Cat" class="experience-image">
+        <div class="experience-body">
+          <div class="experience-title">Doja Cat</div>
+          <div class="experience-text">Хит “Paint The Town Red” собрал 1.5+ млрд прослушиваний</div>
+          <div class="experience-meta">🔥17 октября • Portland • от $76</div>
+          <a class="primary-btn" href="https://c183.travelpayouts.com/click?shmarker=636374.ticketmaster&promo_id=5398&source_type=customlink&type=click&custom_url=https%3A%2F%2Fticketmaster.evyy.net%2Fc%2F1209822%2F264167%2F4272%3Fu%3Dhttps%253A%252F%252Fwww.ticketmaster.com%252Fdoja-cat-tour-ma-vie-world-portland-oregon-10-17-2026%252Fevent%252F0F00633A89A82A33" target="_blank" rel="noopener">Взять билеты</a>
+        </div>
+      </div>
+
+      <div class="experience-card">
+        <img src="the_pretty_reckless.jpg" alt="The Pretty Reckless" class="experience-image">
+        <div class="experience-body">
+          <div class="experience-title">The Pretty Reckless</div>
+          <div class="experience-text">№1 рок-хиты в Billboard, вокал Тейлор Момсен.</div>
+          <div class="experience-meta">🔥7 августа • Portland • от $82</div>
+          <a class="primary-btn" href="https://ticketnetwork.tpo.li/qCZx3aaA" target="_blank" rel="noopener">Взять билеты</a>
+        </div>
+      </div>
+
+  <div class="experience-card">
+    <img src="muse.jpg" class="experience-image">
+    <div class="experience-body">
+      <div class="experience-title">Muse</div>
+      <div class="experience-text">2 Грэмми, стадионные туры и мировой рок-гимн “Uprising”.</div>
+      <div class="experience-meta">🔥22 августа • Ridgefield • от $67</div>
+      <a class="primary-btn" href="https://c183.travelpayouts.com/click?shmarker=636374.ticketmaster&promo_id=5398&source_type=customlink&type=click&custom_url=https%3A%2F%2Fticketmaster.evyy.net%2Fc%2F1209822%2F264167%2F4272%3Fu%3Dhttps%253A%252F%252Fwww.ticketmaster.com%252Fmuse-the-wow-signal-tour-ridgefield-washington-08-22-2026%252Fevent%252F0F006479A1617F47" target="_blank" rel="noopener">Взять билеты</a>
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+ <div id="ticket-near" class="ticket-tab-content active">
+
+  <!-- 24 апреля -->
+  <div class="experience-card">
+    <img src="flo_rida.jpg" class="experience-image">
+    <div class="experience-body">
+      <div class="experience-title">Flo Rida</div>
+      <div class="experience-text">Рэпер с клубными хитами 2010-х, которые знают почти все. Концерт больше как вечеринка, чем классический лайв.</div>
+      <div class="experience-meta">⭐ 24 апреля • Ridgefield • от $104</div>
+      <a class="primary-btn" href="https://c183.travelpayouts.com/click?shmarker=636374.ticketmaster&promo_id=5398&source_type=customlink&type=click&custom_url=https%3A%2F%2Fticketmaster.evyy.net%2Fc%2F1209822%2F264167%2F4272%3Fu%3Dhttps%253A%252F%252Fwww.ticketmaster.com%252Fflo-rida-ridgefield-washington-04-24-2026%252Fevent%252F0F006422B3476B7D" target="_blank" rel="noopener">Взять билеты</a>
+    </div>
+  </div>
+
+  <!-- 1 июля -->
+  <div class="experience-card">
+    <img src="machine_gun_kelly.jpg" class="experience-image">
+    <div class="experience-body">
+      <div class="experience-title">Machine Gun Kelly</div>
+      <div class="experience-text">Рэпер, который перешёл в поп-панк и собрал новую аудиторию. Концерты громкие, быстрые и с сильной энергетикой.</div>
+      <div class="experience-meta">⭐ 1 июля • Ridgefield • от $78</div>
+      <a class="primary-btn" href="https://c183.travelpayouts.com/click?shmarker=636374.ticketmaster&promo_id=5398&source_type=customlink&type=click&custom_url=https%3A%2F%2Fticketmaster.evyy.net%2Fc%2F1209822%2F264167%2F4272%3Fu%3Dhttps%253A%252F%252Fwww.ticketmaster.com%252Fmgk-lost-americana-tour-ridgefield-washington-07-01-2026%252Fevent%252F0F00631E08E65FAA" target="_blank" rel="noopener">Взять билеты</a>
+    </div>
+  </div>
+
+    <!-- 18 июля -->
+  <div class="experience-card">
+    <img src="joji.jpg" class="experience-image">
+    <div class="experience-body">
+      <div class="experience-title">Joji</div>
+      <div class="experience-text">Атмосферный R&B и поп с меланхоличным звучанием. Бывший YouTube-комик, ставший серьёзным музыкантом.</div>
+      <div class="experience-meta">⭐ 18 июля • Portland • от $63</div>
+      <a class="primary-btn" href="https://c183.travelpayouts.com/click?shmarker=636374.ticketmaster&promo_id=5398&source_type=customlink&type=click&custom_url=https%3A%2F%2Fticketmaster.evyy.net%2Fc%2F1209822%2F264167%2F4272%3Fu%3Dhttps%253A%252F%252Fwww.ticketmaster.com%252Fjoji-solaris-portland-oregon-07-18-2026%252Fevent%252F0F006454CF043825" target="_blank" rel="noopener">Взять билеты</a>
+    </div>
+  </div>
+
+</div>
+
+ <div id="ticket-later" class="ticket-tab-content">
+
+
+  <!-- 5 августа -->
+  <div class="experience-card">
+    <img src="benson_boone.jpg" class="experience-image">
+    <div class="experience-body">
+      <div class="experience-title">Benson Boone</div>
+      <div class="experience-text">Один из самых быстро растущих поп-артистов с сильным вокалом. Первый большой тур и высокий спрос на билеты.</div>
+      <div class="experience-meta">🔥 5 августа • Portland • от $75</div>
+      <a class="primary-btn" href="https://c183.travelpayouts.com/click?shmarker=636374.ticketmaster&promo_id=5398&source_type=customlink&type=click&custom_url=https%3A%2F%2Fticketmaster.evyy.net%2Fc%2F1209822%2F264167%2F4272%3Fu%3Dhttps%253A%252F%252Fwww.ticketmaster.com%252Fbenson-boone-wanted-man-tour-portland-oregon-08-05-2026%252Fevent%252F0F006479E7BDC5BD" target="_blank" rel="noopener">Взять билеты</a>
+    </div>
+  </div>
+
+  <!-- 7 августа -->
+  <div class="experience-card">
+    <img src="the_pretty_reckless.jpg" class="experience-image">
+    <div class="experience-body">
+      <div class="experience-title">The Pretty Reckless</div>
+      <div class="experience-text">Альтернативный рок с мощным женским вокалом. Более камерный концерт с живым звуком и близкой атмосферой.</div>
+      <div class="experience-meta">⭐ 7 августа • Portland • от $82</div>
+      <a class="primary-btn" href="https://ticketnetwork.tpo.li/qCZx3aaA" target="_blank" rel="noopener">Взять билеты</a>
+    </div>
+  </div>
+
+  <!-- 22 августа -->
+  <div class="experience-card">
+    <img src="muse.jpg" class="experience-image">
+    <div class="experience-body">
+      <div class="experience-title">Muse</div>
+      <div class="experience-text">Рок-группа с мировыми хитами и мощным живым звуком. Их концерты — это большое шоу с сильной визуальной частью.</div>
+      <div class="experience-meta">🔥 22 августа • Ridgefield • от $67</div>
+      <a class="primary-btn" href="https://c183.travelpayouts.com/click?shmarker=636374.ticketmaster&promo_id=5398&source_type=customlink&type=click&custom_url=https%3A%2F%2Fticketmaster.evyy.net%2Fc%2F1209822%2F264167%2F4272%3Fu%3Dhttps%253A%252F%252Fwww.ticketmaster.com%252Fmuse-the-wow-signal-tour-ridgefield-washington-08-22-2026%252Fevent%252F0F006479A1617F47" target="_blank" rel="noopener">Взять билеты</a>
+    </div>
+  </div>
+
+  <!-- 17 октября -->
+  <div class="experience-card">
+    <img src="doja_cat.jpg" class="experience-image">
+    <div class="experience-body">
+      <div class="experience-title">Doja Cat</div>
+      <div class="experience-text">Поп и хип-хоп артистка с мировыми хитами и вирусными треками. Шоу яркое, продуманное и с сильной визуальной частью.</div>
+      <div class="experience-meta">🔥 17 октября • Portland • от $76</div>
+      <a class="primary-btn" href="https://c183.travelpayouts.com/click?shmarker=636374.ticketmaster&promo_id=5398&source_type=customlink&type=click&custom_url=https%3A%2F%2Fticketmaster.evyy.net%2Fc%2F1209822%2F264167%2F4272%3Fu%3Dhttps%253A%252F%252Fwww.ticketmaster.com%252Fdoja-cat-tour-ma-vie-world-portland-oregon-10-17-2026%252Fevent%252F0F00633A89A82A33" target="_blank" rel="noopener">Взять билеты</a>
+    </div>
+  </div>
+
+</div>
+
+  <button class="back-inline" onclick="goBack()">Назад</button>
 </div>
 
 <script>
@@ -1799,6 +2024,29 @@ select {
     show("home", false);
   }
 
+function showTicketTab(tab, btn) {
+  document.getElementById('ticket-near').classList.remove('active');
+  document.getElementById('ticket-later').classList.remove('active');
+
+  document.querySelectorAll('#services_tickets .tab-btn').forEach(button => {
+    button.classList.remove('active');
+  });
+
+  document.getElementById('ticket-' + tab).classList.add('active');
+  btn.classList.add('active');
+}
+function switchPlacesTab(event, tabId) {
+  const screen = document.getElementById('services');
+  if (!screen) return;
+
+  screen.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  screen.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+
+  event.currentTarget.classList.add('active');
+
+  const activeTab = document.getElementById(tabId);
+  if (activeTab) activeTab.classList.add('active');
+}
 function restoreScreenOnLoad() {
   const hashScreen = window.location.hash
     ? window.location.hash.replace("#", "")
@@ -2302,6 +2550,42 @@ function beforeFormSubmit() {
   }
   return true;
 }
+function scrollTopConcerts(direction) {
+  const row = document.getElementById('topConcertsRow');
+  row.scrollBy({
+    left: direction * 260,
+    behavior: 'smooth'
+  });
+
+  setTimeout(updateTopConcertArrows, 300);
+}
+
+function updateTopConcertArrows() {
+  const row = document.getElementById('topConcertsRow');
+  const prev = document.getElementById('topConcertsPrev');
+  const next = document.getElementById('topConcertsNext');
+
+  if (!row || !prev || !next) return;
+
+  const maxScrollLeft = row.scrollWidth - row.clientWidth;
+
+  if (row.scrollLeft <= 5) {
+    prev.classList.add('hidden');
+  } else {
+    prev.classList.remove('hidden');
+  }
+
+  if (row.scrollLeft >= maxScrollLeft - 5) {
+    next.classList.add('hidden');
+  } else {
+    next.classList.remove('hidden');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  updateTopConcertArrows();
+});
+
 
 
 </script>
