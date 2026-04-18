@@ -1936,6 +1936,43 @@ select {
   <button class="back-inline" onclick="goBack()">Назад</button>
 </div>
 
+  <div id="form" class="screen">
+  <div class="eyebrow">связь</div>
+  <h2 id="formTitle">Напишите мне</h2>
+  <p class="sub" id="formSub">Ответ придет в тот контакт, который вы оставите.</p>
+
+  <div class="card">
+    <form action="https://formspree.io/f/mpqolvja" method="POST" onsubmit="return beforeFormSubmit()">
+      <input type="hidden" name="page_name" id="page_name" />
+
+      <label>
+        Имя
+        <input type="text" name="name" placeholder="Как к вам обращаться" required />
+      </label>
+
+      <label>
+        Контакт
+        <input type="text" name="contact" placeholder="Телефон или Telegram" required />
+      </label>
+
+      <label>
+        Комментарий
+        <textarea name="message" id="messageField" placeholder="Опишите ситуацию"></textarea>
+      </label>
+
+      <div class="button-row">
+        <button class="primary-btn" type="submit">Отправить</button>
+      </div>
+    </form>
+
+    <div class="info-note">
+      Я отвечу в тот контакт, который вы оставите.
+    </div>
+  </div>
+
+  <button class="back-inline" onclick="goBack()">Назад</button>
+</div>
+
 <script>
   let currentScreen = "home";
   let screenHistory = [];
